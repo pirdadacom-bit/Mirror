@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mirror — News that matters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#101b2b;--muted:#687486;--line:#e7ebf0;--red:#c51f35;--paper:#fff;--soft:#f5f7fa;--gold:#b88a43}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,"Hind Siliguri",sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(1200px,calc(100% - 40px));margin:auto}
+.topline{background:#101b2b;color:#dce3ed;font-size:12px}.topline .wrap{display:flex;justify-content:space-between;padding:9px 0;gap:15px}.topline span{opacity:.85}
+header{border-bottom:1px solid var(--line);background:#fff}.head{display:flex;align-items:center;justify-content:space-between;padding:22px 0;gap:24px}.brand{display:flex;align-items:center;gap:12px}.mark{width:48px;height:48px;background:var(--red);color:white;display:grid;place-items:center;font-weight:900;font-size:25px;letter-spacing:-2px}.brandname{font-size:31px;font-weight:900;letter-spacing:-1.7px;line-height:1}.brandname span{color:var(--red)}.tag{font-size:10px;letter-spacing:2.1px;color:var(--muted);margin-top:6px;text-transform:uppercase}
+.actions{display:flex;align-items:center;gap:12px}.lang{border:1px solid var(--line);border-radius:4px;padding:9px 12px;background:white;font-weight:700;cursor:pointer}.search{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;background:white;font-size:17px;cursor:pointer}
+nav{border-top:1px solid var(--line)}.navrow{display:flex;align-items:center;gap:27px;overflow:auto;white-space:nowrap;padding:14px 0;font-size:13px;font-weight:700}.navrow a:first-child{color:var(--red)}.navrow a:hover{color:var(--red)}
+.breaking{background:#f8f0f1;border-bottom:1px solid #f0dadd}.breaking .wrap{display:flex;align-items:center;gap:14px;padding:11px 0;font-size:13px}.breaking b{background:var(--red);color:white;padding:6px 10px;font-size:11px;letter-spacing:.6px}.breaking p{margin:0;color:#384354}
+main{padding:28px 0 60px}.section-head{display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--ink);padding-bottom:10px;margin:0 0 18px}.section-head h2{font-size:17px;margin:0;font-weight:800}.section-head a{font-size:12px;color:var(--red);font-weight:700}
+.hero-grid{display:grid;grid-template-columns:1.65fr 1fr;gap:22px;margin-bottom:34px}.lead{position:relative;min-height:410px;overflow:hidden;background:linear-gradient(135deg,#253b55,#111b2b 65%,#7c2636);color:white;display:flex;align-items:end}.lead:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 72% 30%,#ffffff25,transparent 34%),linear-gradient(0deg,#08111ee8,transparent 70%)}.lead-content{position:relative;padding:30px;max-width:690px}.kicker{font-size:11px;color:#ffd6dc;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}.lead h1{font-family:"Hind Siliguri",Inter,sans-serif;font-size:clamp(27px,3.4vw,42px);line-height:1.28;margin:12px 0;font-weight:700}.lead p{color:#e0e5ec;line-height:1.7;margin:0 0 17px;max-width:620px;font-size:14px}.meta{font-size:11px;color:#d3d9e2;display:flex;gap:13px;flex-wrap:wrap}
+.side-stories{display:grid;grid-template-rows:1fr 1fr;gap:16px}.side-card{display:grid;grid-template-columns:42% 1fr;gap:15px;border-bottom:1px solid var(--line);padding-bottom:15px;min-height:0}.thumb{min-height:145px;background:linear-gradient(135deg,#d4dce7,#8797ad);position:relative;overflow:hidden}.thumb:after{content:"";position:absolute;width:80px;height:80px;border-radius:50%;background:#ffffff35;right:-15px;top:18px}.thumb.red{background:linear-gradient(135deg,#9c293b,#e4a2a6)}.thumb.gold{background:linear-gradient(135deg,#b78a43,#ead8b2)}.thumb.blue{background:linear-gradient(135deg,#274c70,#a8c1d6)}.side-card h3{font-family:"Hind Siliguri",Inter,sans-serif;font-size:18px;line-height:1.42;margin:7px 0 10px}.category{font-size:10px;color:var(--red);font-weight:800;letter-spacing:1px;text-transform:uppercase}.smallmeta{font-size:10px;color:var(--muted)}
+.content-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:30px}.news-grid{display:grid;grid-template-columns:1fr;gap:0}.news-card{display:grid;grid-template-columns:104px minmax(0,1fr);grid-template-rows:auto auto auto;column-gap:17px;align-content:center;padding:16px 0;border-bottom:1px solid var(--line);min-height:130px}.news-card .thumb{grid-column:1;grid-row:1/4;width:104px;height:104px;min-height:104px;border-radius:50%;margin:3px 0 0;align-self:center}.news-card .category{grid-column:2;grid-row:1;align-self:end}.news-card h3{grid-column:2;grid-row:2;font-family:"Hind Siliguri",Inter,sans-serif;font-size:18px;line-height:1.45;margin:5px 0 7px}.news-card p{display:none}.news-card .smallmeta{grid-column:2;grid-row:3} 
+.scroll-ticker{display:flex;align-items:center;gap:12px;background:#f5f7fa;border:1px solid var(--line);margin:0 0 23px;overflow:hidden;min-height:42px}.ticker-label{background:var(--red);color:white;font-size:10px;font-weight:800;letter-spacing:.8px;padding:13px 12px;white-space:nowrap}.ticker-window{overflow:hidden;flex:1}.ticker-track{display:flex;align-items:center;gap:23px;width:max-content;white-space:nowrap;animation:scrollnews 28s linear infinite;font-family:"Hind Siliguri",Inter,sans-serif;font-size:13px;font-weight:600}.ticker-track i{font-style:normal;color:var(--red);font-size:9px}@keyframes scrollnews{from{transform:translateX(0)}to{transform:translateX(-50%)}}.sidebar-box{border:1px solid var(--line);padding:17px;margin-bottom:20px}.sidebar-box h3{margin:0 0 14px;font-size:14px;border-bottom:2px solid var(--ink);padding-bottom:10px}.most-read{list-style:none;margin:0;padding:0;counter-reset:read}.most-read li{counter-increment:read;display:grid;grid-template-columns:26px 1fr;gap:10px;padding:11px 0;border-bottom:1px solid var(--line);font-family:"Hind Siliguri",Inter,sans-serif;font-size:14px;line-height:1.4}.most-read li:before{content:"0" counter(read);font-family:Inter,sans-serif;color:var(--red);font-size:12px;font-weight:800}
+.adbox{background:var(--soft);border:1px dashed #cbd3de;min-height:170px;display:grid;place-items:center;color:#9aa4b2;font-size:11px;letter-spacing:1.4px}
+.category-strip{margin-top:38px}.category-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.cat{padding:22px;background:#f4f6f9;border-top:3px solid var(--red)}.cat h3{margin:0 0 8px;font-size:14px}.cat p{margin:0;color:var(--muted);font-size:11px}
+footer{background:#101b2b;color:#dce3ed;padding:38px 0 22px;margin-top:30px}.footgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:35px}.footbrand{font-size:28px;font-weight:900}.footbrand span{color:#ff6478}.footnote{font-size:12px;line-height:1.8;color:#aab5c4;max-width:430px}.footcol h4{font-size:12px;text-transform:uppercase;letter-spacing:1px}.footcol a{display:block;font-size:12px;color:#aab5c4;margin:10px 0}.copyright{border-top:1px solid #2a3748;margin-top:28px;padding-top:17px;color:#8d9aab;font-size:10px;display:flex;justify-content:space-between;gap:12px}
+body.en .bn{display:none}body:not(.en) .en{display:none}
+@media(max-width:850px){.hero-grid{grid-template-columns:1fr}.lead{min-height:360px}.side-stories{grid-template-columns:1fr 1fr;grid-template-rows:auto}.side-card{grid-template-columns:1fr}.side-card .thumb{min-height:130px}.content-grid{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:1fr 1fr;gap:15px}.category-cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.wrap{width:min(100% - 28px,1200px)}.topline .wrap{font-size:10px}.head{padding:15px 0}.mark{width:40px;height:40px;font-size:21px}.brandname{font-size:26px}.tag{font-size:8px;letter-spacing:1.4px}.actions{gap:6px}.lang{padding:8px;font-size:11px}.search{width:34px;height:34px}.navrow{gap:20px;padding:12px 0;font-size:12px}.breaking .wrap{align-items:flex-start;font-size:11px}.breaking b{white-space:nowrap}.lead{min-height:330px}.lead-content{padding:20px}.lead h1{font-size:27px}.lead p{font-size:12px}.side-stories{grid-template-columns:1fr}.side-card{grid-template-columns:38% 1fr}.side-card .thumb{min-height:112px}.side-card h3{font-size:16px;margin:5px 0}.news-grid{grid-template-columns:1fr;gap:0}.news-card{grid-template-columns:78px minmax(0,1fr);column-gap:12px;min-height:104px;padding:13px 0}.news-card .thumb{width:76px;height:76px;min-height:76px}.news-card h3{font-size:15px;margin:4px 0 5px}.news-card .smallmeta{font-size:9px}.ticker-track{font-size:12px}.sidebar{grid-template-columns:1fr}.category-cards{grid-template-columns:repeat(2,1fr);gap:9px}.cat{padding:15px}.footgrid{grid-template-columns:1fr 1fr}.footgrid>div:first-child{grid-column:1/-1}.copyright{flex-direction:column}}
+
+/* Reference-inspired feature strip and maroon masthead */
+.feature-strip{background:#f5f5f1;border-top:2px solid #222}
+.feature-inner{width:min(1150px,calc(100% - 40px));margin:auto;min-height:285px;display:grid;grid-template-columns:225px minmax(0,1fr) 55px;align-items:center;gap:34px;padding:28px 0}
+.feature-image{width:225px;height:225px;object-fit:cover;border-radius:50%}
+.feature-label{display:flex;align-items:center;gap:15px;color:#7b4144;font-size:32px;font-weight:600;margin-bottom:12px}
+.feature-label i{width:34px;height:48px;background:#7b4144;border-radius:28px 0 0 28px;display:inline-block}
+.feature-title{font-size:clamp(26px,3.5vw,43px);font-weight:500;line-height:1.55;color:#080808}
+.feature-next{font-size:57px;color:#7b4144;border:0;background:transparent;cursor:pointer}
+.site-header{background:#784143;color:#fff}
+.site-header .head{padding:30px 0;min-height:160px}
+.site-header .brand{color:#fff;gap:18px}
+.site-header .mark{border-radius:50%;border:6px solid white;width:74px;height:74px;background:transparent;color:white;font-size:30px;font-weight:800}
+.site-header .brandname,.site-header .brandname span{color:#fff;font-size:clamp(28px,4vw,48px);font-weight:800;letter-spacing:0}
+.site-header .actions{gap:24px}
+.site-header .stream-link{border:2px solid white;border-radius:9px;padding:9px 12px;font-size:clamp(16px,2.4vw,29px);font-weight:900;color:white;white-space:nowrap}
+.site-header .menu-toggle,.site-header .search{border:0;background:transparent;color:white;font-size:44px;line-height:1;cursor:pointer;width:auto;height:auto;padding:0}
+.site-header .lang{border:1px solid #ffffff80;color:#fff;background:transparent}
+.site-header nav{display:none;border-top:1px solid #ffffff45}
+.site-header nav.open{display:block}
+.site-header .navrow a{color:white}
+@media(max-width:700px){
+.feature-inner{min-height:170px;grid-template-columns:110px minmax(0,1fr) 25px;gap:13px;padding:17px 0;width:calc(100% - 25px)}
+.feature-image{width:110px;height:110px}
+.feature-label{font-size:20px;gap:8px;margin-bottom:5px}.feature-label i{width:20px;height:28px}
+.feature-title{font-size:clamp(16px,4vw,24px);line-height:1.5}
+.feature-next{font-size:34px}
+.site-header .head{min-height:95px;padding:16px 0}.site-header .mark{width:49px;height:49px;font-size:19px;border-width:4px}
+.site-header .brand{gap:9px}.site-header .brandname,.site-header .brandname span{font-size:clamp(19px,5vw,29px)}
+.site-header .actions{gap:10px}.site-header .stream-link{font-size:11px;padding:6px;border-radius:6px}
+.site-header .menu-toggle,.site-header .search{font-size:29px}.site-header .lang{font-size:9px;padding:5px}
+}
+@media(max-width:390px){.feature-inner{grid-template-columns:78px minmax(0,1fr) 18px;gap:9px}.feature-image{width:78px;height:78px}.feature-title{font-size:14px}.site-header .stream-link{display:none}}
+</style>
+</head>
+<body>
+<section class="feature-strip" aria-label="Featured stories"><div class="feature-inner">
+<img class="feature-image" src="mirror-feature-photo.png" alt="ফিচার সংবাদ">
+<div class="feature-text"><div class="feature-label"><i></i><span class="bn">ফিচার</span><span class="en">Feature</span></div><div class="feature-title"><span class="bn">পুরোনো ছবিতে আটকে থাকে যে জীবন, তার জন্য মন কেন কাঁদে</span><span class="en">Why do old photographs make us miss the lives we once lived?</span></div></div>
+<button class="feature-next" type="button" aria-label="Next feature">❯</button></div></section>
+<header class="site-header"><div class="wrap head">
+<a class="brand" href="#"><div class="mark">মি</div><div class="brandname"><span class="bn">বাংলা মিরর</span><span class="en">BANGLA MIRROR</span></div></a>
+<div class="actions"><a class="stream-link" href="#">DHAKA STREAM</a><button class="menu-toggle" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" type="button">☰</button><button class="search" aria-label="Search" type="button">⌕</button><button class="lang" id="langBtn" type="button">বাংলা / EN</button></div>
+</div><nav id="mainNav"><div class="wrap navrow">
+<a href="#"><span class="bn">প্রচ্ছদ</span><span class="en">Home</span></a><a href="#"><span class="bn">বাংলাদেশ</span><span class="en">Bangladesh</span></a><a href="#"><span class="bn">রাজনীতি</span><span class="en">Politics</span></a><a href="#"><span class="bn">বিশ্ব</span><span class="en">World</span></a><a href="#"><span class="bn">অর্থনীতি</span><span class="en">Business</span></a><a href="#"><span class="bn">খেলাধুলা</span><span class="en">Sports</span></a><a href="#"><span class="bn">বিনোদন</span><span class="en">Entertainment</span></a><a href="#"><span class="bn">সিলেট</span><span class="en">Sylhet</span></a><a href="#"><span class="bn">হবিগঞ্জ</span><span class="en">Habiganj</span></a>
+</div></nav></header>
+<div class="breaking"><div class="wrap"><b><span class="bn">ব্রেকিং</span><span class="en">BREAKING</span></b><p><span class="bn">সর্বশেষ সংবাদ ও গুরুত্বপূর্ণ আপডেট জানতে চোখ রাখুন মিররে</span><span class="en">Stay with Mirror for the latest headlines and important updates.</span></p></div></div>
+<main class="wrap">
+<div class="hero-grid">
+  <article class="lead"><div class="lead-content"><div class="kicker"><span class="bn">প্রধান সংবাদ</span><span class="en">Top Story</span></div><h1><span class="bn">সত্য, সাহস ও দায়িত্বশীল সাংবাদিকতায় প্রতিদিনের গুরুত্বপূর্ণ খবর</span><span class="en">The stories shaping our world, reported with clarity and responsibility</span></h1><p><span class="bn">দেশ-বিদেশের সর্বশেষ খবর, বিশ্লেষণ ও মানুষের জীবনের সঙ্গে জড়িত গুরুত্বপূর্ণ প্রতিবেদন—এক জায়গায়।</span><span class="en">The latest news, context and reporting that brings the issues that matter into focus.</span></p><div class="meta"><span>Mirror Desk</span><span>•</span><span>09 Nov 2026</span><span>•</span><span>4 min read</span></div></div></article>
+  <div class="side-stories">
+    <article class="side-card"><div class="thumb red"></div><div><div class="category">Bangladesh</div><h3><span class="bn">জাতীয় গুরুত্বপূর্ণ বিষয়ে নতুন সিদ্ধান্ত, বিস্তারিত জানুন</span><span class="en">A major national development: what you need to know</span></h3><div class="smallmeta">Mirror Correspondent · 2 hours ago</div></div></article>
+    <article class="side-card"><div class="thumb gold"></div><div><div class="category">Sylhet Region</div><h3><span class="bn">সিলেট অঞ্চলের জনজীবন ও উন্নয়ন নিয়ে বিশেষ প্রতিবেদন</span><span class="en">Inside the issues affecting communities across Sylhet</span></h3><div class="smallmeta">Staff Reporter · 5 hours ago</div></div></article>
+  </div>
+</div>
+<div class="content-grid"><section>
+
+  <div class="scroll-ticker"><span class="ticker-label"><span class="bn">শিরোনাম</span><span class="en">HEADLINES</span></span><div class="ticker-window"><div class="ticker-track"><span>হবিগঞ্জ ও সিলেটের সর্বশেষ সংবাদ</span><i>◆</i><span>দেশ-বিদেশের গুরুত্বপূর্ণ খবর</span><i>◆</i><span>Latest updates from Bangladesh and beyond</span><i>◆</i><span>হবিগঞ্জ ও সিলেটের সর্বশেষ সংবাদ</span><i>◆</i></div></div></div>
+
+  <div class="section-head"><h2><span class="bn">সর্বশেষ সংবাদ</span><span class="en">Latest News</span></h2><a href="#"><span class="bn">সব খবর →</span><span class="en">View all →</span></a></div>
+  <div class="news-grid">
+    <article class="news-card"><div class="thumb blue"></div><div class="category">Politics</div><h3><span class="bn">রাজনীতি ও জনস্বার্থে আলোচনায় নতুন যে বিষয়গুলো</span><span class="en">The key issues driving today's political conversation</span></h3><p>News, context and analysis from the Mirror newsroom.</p><div class="smallmeta">8 min ago · 3 min read</div></article>
+    <article class="news-card"><div class="thumb red"></div><div class="category">World</div><h3><span class="bn">আন্তর্জাতিক অঙ্গনে গুরুত্বপূর্ণ ঘটনাপ্রবাহ</span><span class="en">The latest developments from around the world</span></h3><p>News, context and analysis from the Mirror newsroom.</p><div class="smallmeta">35 min ago · 4 min read</div></article>
+    <article class="news-card"><div class="thumb gold"></div><div class="category">Business</div><h3><span class="bn">অর্থনীতি ও বাজারের সর্বশেষ পরিস্থিতি</span><span class="en">What today's economic signals mean for readers</span></h3><p>News, context and analysis from the Mirror newsroom.</p><div class="smallmeta">1 hour ago · 3 min read</div></article>
+    <article class="news-card"><div class="thumb gold"></div><div class="category">Habiganj</div><h3><span class="bn">হবিগঞ্জের স্থানীয় সংবাদ, মানুষের কথা ও সম্ভাবনা</span><span class="en">Local voices and developments from Habiganj</span></h3><p>News, context and analysis from the Mirror newsroom.</p><div class="smallmeta">2 hours ago · 5 min read</div></article>
+    <article class="news-card"><div class="thumb blue"></div><div class="category">Sports</div><h3><span class="bn">খেলার মাঠের সর্বশেষ খবর ও বিশ্লেষণ</span><span class="en">The latest results, stories and sporting analysis</span></h3><p>News, context and analysis from the Mirror newsroom.</p><div class="smallmeta">3 hours ago · 2 min read</div></article>
+    <article class="news-card"><div class="thumb red"></div><div class="category">Culture</div><h3><span class="bn">সংস্কৃতি, বিনোদন ও জীবনযাপনের নানা আয়োজন</span><span class="en">Culture, entertainment and stories worth sharing</span></h3><p>News, context and analysis from the Mirror newsroom.</p><div class="smallmeta">4 hours ago · 4 min read</div></article>
+  </div>
+  <div class="category-strip"><div class="section-head"><h2><span class="bn">বিভাগ অনুযায়ী সংবাদ</span><span class="en">Explore by Category</span></h2></div><div class="category-cards">
+    <div class="cat"><h3>বাংলাদেশ</h3><p>National news & updates</p></div><div class="cat"><h3>সিলেট</h3><p>Regional reports & voices</p></div><div class="cat"><h3>হবিগঞ্জ</h3><p>Local news & community</p></div><div class="cat"><h3>বিশ্ব</h3><p>International coverage</p></div>
+  </div></div>
+</section>
+<aside class="sidebar"><div class="sidebar-box"><h3><span class="bn">সর্বাধিক পঠিত</span><span class="en">Most Read</span></h3><ol class="most-read"><li><span class="bn">আজকের আলোচিত পাঁচটি গুরুত্বপূর্ণ খবর</span><span class="en">Five stories readers are following today</span></li><li><span class="bn">দেশের অর্থনীতি নিয়ে বিশেষ বিশ্লেষণ</span><span class="en">A closer look at the national economy</span></li><li><span class="bn">সিলেট বিভাগের সর্বশেষ পরিস্থিতি</span><span class="en">Latest updates from Sylhet Division</span></li><li><span class="bn">জনস্বার্থে নতুন উদ্যোগ ও পরিকল্পনা</span><span class="en">New initiatives and public-interest plans</span></li></ol></div><div class="adbox">ADVERTISEMENT</div></aside></div>
+</main>
+<footer><div class="wrap"><div class="footgrid"><div><div class="footbrand">MIRR<span>O</span>R</div><p class="footnote">Independent journalism. Reliable information. Mirror brings readers the stories that matter, with a commitment to accuracy, fairness and public interest.</p></div><div class="footcol"><h4>Sections</h4><a href="#">Bangladesh</a><a href="#">World</a><a href="#">Politics</a><a href="#">Business</a></div><div class="footcol"><h4>About Mirror</h4><a href="#">About Us</a><a href="#">Contact</a><a href="#">Editorial Policy</a><a href="#">Privacy Policy</a></div></div><div class="copyright"><span>© 2026 Mirror. All rights reserved.</span><span>Independent • Accurate • Responsible</span></div></div></footer>
+<script>
+const menuBtn=document.getElementById('menuBtn');
+menuBtn.addEventListener('click',()=>{const nav=document.getElementById('mainNav');const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});
+const btn=document.getElementById('langBtn');
+btn.addEventListener('click',()=>{document.body.classList.toggle('en');});
+</script>
+</body></html>
